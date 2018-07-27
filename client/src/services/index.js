@@ -13,3 +13,4 @@ client.configure(auth({
 
 export const serieService = client.service('series')
 export const serieLookup = client.service('script')
+export const taskService = client.service('task')
