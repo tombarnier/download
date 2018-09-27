@@ -11,8 +11,8 @@
 		<li> Saison N°{{saison.num}} </li>
 		<li>Qualité:{{saison.type}} </li>
 		<li>Lang:{{saison.lang}} </li>
-		<li>Liens:<a :href="saison.lienSaison">{{saison.lienSaison}}</a></li>
-		<ul v-for="ep in saison.liens" :key="ep.episode">
+		<li>Lien:<a :href="saison.lien">{{saison.lien}}</a></li>
+		<ul v-for="ep in saison.lien" :key="ep.episode">
 			<li>Episode n°{{ep.episode}}</li>
 			<li><a :href="ep.lien">{{ep.lien}}</a></li>
 		</ul>

@@ -46,6 +46,9 @@
     "feathers-nedb": "^3.1.0",
     "helmet": "^3.12.1",
     "nedb": "^1.8.0",
+    "promise": "^8.0.1",
+    "puppeteer": "^1.6.2",
+    "scrap": "^0.1.0",
     "serve-favicon": "^2.5.0",
     "shelljs": "^0.8.2",
     "winston": "^3.0.0"
