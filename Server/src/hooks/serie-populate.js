@@ -6,18 +6,15 @@ const { BadRequest } = require ('@feathersjs/errors');
 module.exports = function (options = {}) {
   return async context => {
 	const { app, data, params } = context;
-	
 	const serieA = await app.service('series').find({
 		query: {
 			name: {
-				$match: data.name,
+				$phrase: data.name,
 			}
 		}
 	});
-	console.log(serieA)
-	if (serieA.total != 0 ){
-		app.service('series').patch(serieA.data[0]._id,data,params);
-		throw new BadRequest('serie updated');
+	if (serieA.total > 0 ){
+		throw new BadRequest('serie updated' + data.name );
 	}
 	return context;
   };

@@ -4,14 +4,14 @@ const elasticsearch = require('elasticsearch');
 const hooks = require('./series.hooks');
 
 module.exports = function (app) {
-  
+
   const paginate = app.get('paginate');
 
   const options = {
     name: 'series',
 	paginate
   };
-	
+
     const Model = new elasticsearch.Client({
     host: process.env.ELASTIC_URL ? process.env.ELASTIC_URL : 'localhost:9200',
     apiVersion: '6.0'
@@ -23,7 +23,10 @@ module.exports = function (app) {
 		index: 'series',
 		type: 'doc'
 	},
-	paginate
+	paginate: {
+    default: 1000,
+    max: 20000
+  }
   }));
 
   // Get our initialized service so that we can register hooks

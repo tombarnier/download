@@ -7,7 +7,7 @@
 	<router-link :to="{ name: 'series' }" class="section" exact>Series</router-link>
 	<h1>{{serie.name}}</h1>
 	</br>
-	<ul v-for="saison in serie.saisons" :key="saison.num"> 
+	<ul v-for="saison in serie.saisons" :key="saison.num">
 		<li> Saison N°{{saison.num}} </li>
 		<li>Qualité:{{saison.type}} </li>
 		<li>Lang:{{saison.lang}} </li>
@@ -56,6 +56,7 @@ export default {
 		},
 		updateSerie() {
 			serieLookup.create({
+				action: "episodes",
 				args: this.serie.lien
 			}).then((response) => {
 				console.log(response)

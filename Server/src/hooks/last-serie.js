@@ -10,7 +10,7 @@ let serieList = []
 
 module.exports = function (options = {}) {
   return async context => {
-		if (context.data.type === "last"){
+		if (context.data.action === "last"){
 			request(url, (error, response, html) => {
 				if(!error && response.statusCode == 200) {
 					const $ = cheerio.load(html);
@@ -95,10 +95,10 @@ module.exports = function (options = {}) {
 					}
 				}
 				console.log("fin")
-				
-				
-				
-				
+
+
+
+
 				/*context.app.service('series').create(serieList[i]).then( function(){
 					console.log("c'est bonn nan?")
 				}).catch( function(err){
