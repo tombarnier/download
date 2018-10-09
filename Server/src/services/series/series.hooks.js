@@ -1,6 +1,6 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
 
-const seriePopulate = require('../../hooks/serie-populate');
+const seriePopulate = require('../../hooks/testHooks');
 
 module.exports = {
   before: {

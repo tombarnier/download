@@ -1,6 +1,6 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
 
-const lastSerie = require('../../hooks/last-serie');
+const lastSerie = require('../../hooks/testHooks');
 
 module.exports = {
   before: {

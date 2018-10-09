@@ -1,11 +1,10 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
 
-const scanSeries = require('../../hooks/scanserie');
-const Episodes = require('../../hooks/scanepisode');
+const scanSeries = require('../../hooks/testHooks');
 
 module.exports = {
   before: {
-    all: [authenticate('jwt'), scanSeries(), Episodes()],
+    all: [authenticate('jwt'), scanSeries()],
     find: [],
     get: [],
     create: [],
